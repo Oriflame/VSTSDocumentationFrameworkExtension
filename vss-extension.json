@@ -1,0 +1,57 @@
+{
+    "manifestVersion": 1,
+    "id": "Oriflame-DocumentationFramework",
+    "version": "0.2.11",
+    "name": "Documentation Framework",
+    "description": "Documentation Framework: Feature as Business Requirement Document.",
+    "publisher": "ondrej-janosik",
+    "public": false,
+    "tags": [
+        "Sample"
+    ],
+    "categories": [
+        "Developer samples"
+    ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "icons": {
+        "default": "images/icon.jpg"
+    },
+    "contributions": [
+        {
+            "id": "sample-work-item-menu",
+            "type": "ms.vss-web.action",
+            "description": "Documentation Framework: Add template",
+            "targets": [
+                "ms.vss-work-web.work-item-context-menu"
+            ],
+            "properties": {
+                "text": "Add template",
+                "title": "Add template",
+                "toolbarText": "Add template",
+                "icon": "images/icon-small.png",
+                "uri": "index.html"
+            }
+        }
+    ],
+    "scopes": [
+        "vso.work"
+    ],
+    "files": [
+        {
+            "path": "index.html",
+            "addressable": true
+        },
+        {
+            "path": "images",
+            "addressable": true
+        },
+        {
+            "path": "sdk/node_modules/vss-web-extension-sdk/lib//VSS.SDK.min.js",
+            "addressable": true
+        }
+    ]
+}
