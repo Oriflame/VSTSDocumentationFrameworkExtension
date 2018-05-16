@@ -29,33 +29,29 @@
             usePlatformScripts: true
         });
 
-        VSS.require(["TFS/WorkItemTracking/Services"], function (_WorkItemServices) {
+        VSS.require(["TFS/WorkItemTracking/Services"], (_WorkItemServices) => {
             // Get the WorkItemFormService.  This service allows you to get/set fields/links on the 'active' work item (the work item
             // that currently is displayed in the UI).
-            function getWorkItemFormService() {
+            const getWorkItemFormService = () => {
                 return _WorkItemServices.WorkItemFormService.getService();
             }
 
-            VSS.register(VSS.getContribution().id, function () {
-                return {
-                    // This is a callback that gets invoked when a user clicks the newly contributed menu item
-                    // The actionContext parameter contains context data surrounding the circumstances of this
-                    // action getting invoked.
-                    execute: function (actionContext) {
-                        getWorkItemFormService().then(async (service) => {
-                            // Get the current values for a few of the common fields
-                            for (var i = 0, len = fieldValues.length; i < len; i++) {
-                                var item = fieldValues[i];
-                                
-                                const value = await service.getFieldValues([item.fieldName]);
-                                var oldValue = value[item.fieldName];
-                                var newValue = item.value + oldValue;
-                                await service.setFieldValue(item.fieldName, newValue);
-                            }
-                        });
-                    }
+            VSS.register(VSS.getContribution().id, () => ({
+                // This is a callback that gets invoked when a user clicks the newly contributed menu item
+                // The actionContext parameter contains context data surrounding the circumstances of this
+                // action getting invoked.
+                execute: async (actionContext) => {
+                    const service = await getWorkItemFormService();
+
+                    // Gets and sets value for each field
+                    for (let item of fieldValues) {
+                        const value = await service.getFieldValues([item.fieldName]);
+                        var oldValue = value[item.fieldName];
+                        var newValue = item.value + oldValue;
+                        await service.setFieldValue(item.fieldName, newValue);
+                    };
                 }
-            });
+            }));
 
             VSS.notifyLoadSucceeded();
         });

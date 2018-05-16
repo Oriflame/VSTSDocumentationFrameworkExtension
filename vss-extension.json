@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "Oriflame-DocumentationFramework",
-    "version": "0.2.20",
+    "version": "0.3.0",
     "name": "Documentation Framework",
     "description": "Documentation Framework: Feature as Business Requirement Document.",
     "publisher": "ondrej-janosik",
