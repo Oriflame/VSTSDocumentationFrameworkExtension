@@ -1,25 +1,37 @@
 {
     "manifestVersion": 1,
-    "id": "Oriflame-DocumentationFramework",
-    "version": "0.3.0",
+    "id": "documentation-framework",
+    "version": "0.9.0",
     "name": "Documentation Framework",
     "description": "Documentation Framework: Feature as Business Requirement Document.",
-    "publisher": "ondrej-janosik",
-    "public": false,
-    "tags": [
-        "Sample"
-    ],
+    "publisher": "oriflame",
+    "public": true,
     "categories": [
-        "Developer samples"
+        "Plan and track"
     ],
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
-    "icons": {
-        "default": "images/icon.jpg"
+    "content": {
+        "details": {
+            "path": "README.md"
+        },
+        "license": {
+            "path": "LICENSE"
+        }
     },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/Oriflame/VSTSDocumentationFrameworkExtension"
+    },
+    "icons": {
+        "default": "images/icon.png"
+    },
+    "galleryFlags": [
+        "Preview"
+    ],
     "contributions": [
         {
             "id": "sample-work-item-menu",
@@ -50,7 +62,7 @@
             "addressable": true
         },
         {
-            "path": "sdk/node_modules/vss-web-extension-sdk/lib//VSS.SDK.min.js",
+            "path": "sdk/node_modules/vss-web-extension-sdk/lib/VSS.SDK.min.js",
             "addressable": true
         }
     ]

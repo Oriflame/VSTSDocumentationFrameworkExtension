@@ -8,7 +8,7 @@ tfx extension publish --manifest-globs vss-extension.json --output-path bin
 ```
 
 ## Links
-* [extension](https://marketplace.visualstudio.com/items?itemName=ondrej-janosik.Oriflame-DocumentationFramework#overview)
+* [extension](https://marketplace.visualstudio.com/items?itemName=Oriflame.documentation-framework#overview)
 
 ## Tutorials and Examples
 * [get started](https://docs.microsoft.com/en-us/vsts/extend/get-started/node?view=vsts)
