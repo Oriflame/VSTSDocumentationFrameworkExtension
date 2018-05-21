@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "documentation-framework",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "name": "Documentation Framework",
     "description": "Documentation Framework: Feature as Business Requirement Document.",
     "publisher": "oriflame",
